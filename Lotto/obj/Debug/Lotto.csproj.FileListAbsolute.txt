@@ -1,0 +1,9 @@
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\bin\Debug\Lotto.exe.config
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\bin\Debug\Lotto.exe
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\bin\Debug\Lotto.pdb
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.csprojResolveAssemblyReference.cache
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.Form1.resources
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.Properties.Resources.resources
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.csproj.GenerateResource.Cache
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.exe
+D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.pdb
