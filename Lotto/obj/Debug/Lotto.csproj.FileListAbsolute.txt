@@ -10,3 +10,7 @@ D:\OneDrive\UCN\visualStudio2015Workspace\Lotto\Lotto\obj\Debug\Lotto.pdb
 C:\Users\dkfre\Source\Repos\Lotto\Lotto\bin\Debug\Lotto.exe.config
 C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.exe
 C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.pdb
+C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.csprojResolveAssemblyReference.cache
+C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.Form1.resources
+C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.Properties.Resources.resources
+C:\Users\dkfre\Source\Repos\Lotto\Lotto\obj\Debug\Lotto.csproj.GenerateResource.Cache

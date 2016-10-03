@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lotto.ModelLayer
 {
-    public class Kupon
+    public class VinderTal
     {
 
     }

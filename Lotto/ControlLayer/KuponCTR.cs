@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lotto.ModelLayer
+namespace Lotto.ControlLayer
 {
-    public class Kupon
+    public class KuponCTR
     {
 
     }
