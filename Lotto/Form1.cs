@@ -67,23 +67,6 @@ namespace Lotto
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //List<TextBox> textboxes = new List<TextBox>();
-            //for (int i = 1; i <= 77; i++)
-            //{
-            //    textboxes.Add((TextBox)this.Controls.Find("textBox" + i, true)[0]);
-            //}
-            //foreach (TextBox tb in textboxes)
-            //{
-            //    if (tb.Text == "")
-            //    {
-            //        lotteryNums.Add(-1);
-            //    }
-            //    else
-            //    {
-            //        lotteryNums.Add(Convert.ToInt32(tb.Text));
-            //    }
-            //}
-
             lotteryNums.Clear();
             tilleagstal.Clear();
             supertal.Clear();
@@ -122,7 +105,12 @@ namespace Lotto
             {
                 if (c is TextBox)
                 {
+                    int inte;
                     TextBox textBox = c as TextBox;
+                    if (!int.TryParse(textBox.Text, out inte))
+                    {
+                        textBox.Text = "";
+                    }
                     if (textBox.Text == string.Empty)
                     {
                         textBox.Text = "0";
@@ -306,17 +294,6 @@ namespace Lotto
             super10.Add(Convert.ToInt32(textBox129.Text));
             super10.Add(Convert.ToInt32(textBox128.Text));
 
-            //label1.Text = "";
-            //lotteryNums.Sort();
-            //foreach (int x in lotteryNums)
-            //    label1.Text += x + " , ";
-
-
-            //label2.Text = "";
-            //userNums1.Sort();
-            //foreach (int x in userNums1)
-            //    label2.Text += x + " , ";
-
             lotteryNums.Sort();
             tilleagstal.Sort();
             supertal.Sort();
@@ -363,27 +340,28 @@ namespace Lotto
 
             //Række 1
             label3.Text = "";
-            var matches1 = lotteryNums.Intersect(userNums1);
+            var matches1 = lotteryNums.Intersect(userNums1).ToList();
+            matches1.Remove(0);
             // Create comma-separated string of matching values...  
             string output1 = string.Join(",", matches1);
             foreach (var x in output1)
             {
-                label3.Text += Regex.Replace(Convert.ToString(x), "[0]", "");
-                // Wanna get som regex or other to handle the first (and only the first) "0" (the one put in when nothing entered)
+                label3.Text += x;
             }
 
             label23.Text = "";
-            var matches11 = tilleagstal.Intersect(tillaeg1);
+            var matches11 = tilleagstal.Intersect(tillaeg1).ToList();
+            matches11.Remove(0);
             //Create comma-separated string of matching values...
             string output11 = string.Join(",", matches11);
             foreach (var x in output11)
             {
                 label23.Text += x;
-                //
             }
 
             label24.Text = "";
-            var matches12 = supertal.Intersect(super1);
+            var matches12 = supertal.Intersect(super1).ToList();
+            matches12.Remove(0);
             //Create comma-separated string of matching values...
             string output12 = string.Join(",", matches12);
             foreach (var x in output12)
@@ -393,7 +371,8 @@ namespace Lotto
 
             //Række 2
             label1.Text = "";
-            var matches2 = lotteryNums.Intersect(userNums2);
+            var matches2 = lotteryNums.Intersect(userNums2).ToList();
+            matches2.Remove(0);
             // Create comma-separated string of matching values...  
             string output2 = string.Join(",", matches2);
             foreach (var x in output2)
@@ -402,7 +381,8 @@ namespace Lotto
             }
 
             label26.Text = "";
-            var matches13 = tilleagstal.Intersect(tillaeg2);
+            var matches13 = tilleagstal.Intersect(tillaeg2).ToList();
+            matches13.Remove(0);
             //Create comma-separated string of matching values...
             string output13 = string.Join(",", matches13);
             foreach (var x in output13)
@@ -411,7 +391,8 @@ namespace Lotto
             }
 
             label25.Text = "";
-            var matches14 = supertal.Intersect(super2);
+            var matches14 = supertal.Intersect(super2).ToList();
+            matches14.Remove(0);
             //Create comma-separated string of matching values...
             string output14 = string.Join(",", matches14);
             foreach (var x in output14)
@@ -421,7 +402,8 @@ namespace Lotto
 
             //Række 3
             label2.Text = "";
-            var matches3 = lotteryNums.Intersect(userNums3);
+            var matches3 = lotteryNums.Intersect(userNums3).ToList();
+            matches3.Remove(0);
             // Create comma-separated string of matching values...  
             string output3 = string.Join(",", matches3);
             foreach (var x in output3)
@@ -430,7 +412,8 @@ namespace Lotto
             }
 
             label28.Text = "";
-            var matches15 = tilleagstal.Intersect(tillaeg3);
+            var matches15 = tilleagstal.Intersect(tillaeg3).ToList();
+            matches15.Remove(0);
             //Create comma-separated string of matching values...
             string output15 = string.Join(",", matches15);
             foreach (var x in output15)
@@ -439,7 +422,8 @@ namespace Lotto
             }
 
             label27.Text = "";
-            var matches16 = supertal.Intersect(super3);
+            var matches16 = supertal.Intersect(super3).ToList();
+            matches16.Remove(0);
             //Create comma-separated string of matching values...
             string output16 = string.Join(",", matches16);
             foreach (var x in output16)
@@ -449,7 +433,8 @@ namespace Lotto
 
             //Række 4
             label16.Text = "";
-            var matches4 = lotteryNums.Intersect(userNums4);
+            var matches4 = lotteryNums.Intersect(userNums4).ToList();
+            matches4.Remove(0);
             // Create comma-separated string of matching values...  
             string output4 = string.Join(",", matches4);
             foreach (var x in output4)
@@ -458,7 +443,8 @@ namespace Lotto
             }
 
             label30.Text = "";
-            var matches17 = tilleagstal.Intersect(tillaeg4);
+            var matches17 = tilleagstal.Intersect(tillaeg4).ToList();
+            matches17.Remove(0);
             //Create comma-separated string of matching values...
             string output17 = string.Join(",", matches17);
             foreach (var x in output17)
@@ -467,7 +453,8 @@ namespace Lotto
             }
 
             label29.Text = "";
-            var matches18 = supertal.Intersect(super4);
+            var matches18 = supertal.Intersect(super4).ToList();
+            matches18.Remove(0);
             //Create comma-separated string of matching values...
             string output18 = string.Join(",", matches18);
             foreach (var x in output18)
@@ -477,7 +464,8 @@ namespace Lotto
 
             //Række 5
             label17.Text = "";
-            var matches5 = lotteryNums.Intersect(userNums5);
+            var matches5 = lotteryNums.Intersect(userNums5).ToList();
+            matches5.Remove(0);
             // Create comma-separated string of matching values...  
             string output5 = string.Join(",", matches5);
             foreach (var x in output5)
@@ -486,7 +474,8 @@ namespace Lotto
             }
 
             label32.Text = "";
-            var matches19 = tilleagstal.Intersect(tillaeg5);
+            var matches19 = tilleagstal.Intersect(tillaeg5).ToList();
+            matches19.Remove(0);
             //Create comma-separated string of matching values...
             string output19 = string.Join(",", matches19);
             foreach (var x in output19)
@@ -495,7 +484,8 @@ namespace Lotto
             }
 
             label31.Text = "";
-            var matches20 = supertal.Intersect(super5);
+            var matches20 = supertal.Intersect(super5).ToList();
+            matches20.Remove(0);
             //Create comma-separated string of matching values...
             string output20 = string.Join(",", matches20);
             foreach (var x in output20)
@@ -505,7 +495,8 @@ namespace Lotto
 
             //Række 6
             label18.Text = "";
-            var matches6 = lotteryNums.Intersect(userNums6);
+            var matches6 = lotteryNums.Intersect(userNums6).ToList();
+            matches6.Remove(0);
             // Create comma-separated string of matching values...  
             string output6 = string.Join(",", matches6);
             foreach (var x in output6)
@@ -514,7 +505,8 @@ namespace Lotto
             }
 
             label34.Text = "";
-            var matches21 = tilleagstal.Intersect(tillaeg6);
+            var matches21 = tilleagstal.Intersect(tillaeg6).ToList();
+            matches21.Remove(0);
             //Create comma-separated string of matching values...
             string output21 = string.Join(",", matches21);
             foreach (var x in output21)
@@ -523,7 +515,8 @@ namespace Lotto
             }
 
             label33.Text = "";
-            var matches22 = supertal.Intersect(super6);
+            var matches22 = supertal.Intersect(super6).ToList();
+            matches22.Remove(0);
             //Create comma-separated string of matching values...
             string output22 = string.Join(",", matches22);
             foreach (var x in output20)
@@ -533,7 +526,8 @@ namespace Lotto
 
             //Række 7
             label19.Text = "";
-            var matches7 = lotteryNums.Intersect(userNums7);
+            var matches7 = lotteryNums.Intersect(userNums7).ToList();
+            matches7.Remove(0);
             // Create comma-separated string of matching values...  
             string output7 = string.Join(",", matches7);
             foreach (var x in output7)
@@ -542,7 +536,8 @@ namespace Lotto
             }
 
             label36.Text = "";
-            var matches23 = tilleagstal.Intersect(tillaeg7);
+            var matches23 = tilleagstal.Intersect(tillaeg7).ToList();
+            matches23.Remove(0);
             //Create comma-separated string of matching values...
             string output23 = string.Join(",", matches23);
             foreach (var x in output23)
@@ -551,7 +546,8 @@ namespace Lotto
             }
 
             label35.Text = "";
-            var matches24 = supertal.Intersect(super7);
+            var matches24 = supertal.Intersect(super7).ToList();
+            matches24.Remove(0);
             //Create comma-separated string of matching values...
             string output24 = string.Join(",", matches24);
             foreach (var x in output24)
@@ -561,7 +557,8 @@ namespace Lotto
 
             //Række 8
             label20.Text = "";
-            var matches8 = lotteryNums.Intersect(userNums8);
+            var matches8 = lotteryNums.Intersect(userNums8).ToList();
+            matches8.Remove(0);
             // Create comma-separated string of matching values...  
             string output8 = string.Join(",", matches8);
             foreach (var x in output8)
@@ -570,7 +567,8 @@ namespace Lotto
             }
 
             label38.Text = "";
-            var matches25 = tilleagstal.Intersect(tillaeg8);
+            var matches25 = tilleagstal.Intersect(tillaeg8).ToList();
+            matches25.Remove(0);
             //Create comma-separated string of matching values...
             string output25 = string.Join(",", matches25);
             foreach (var x in output25)
@@ -579,7 +577,8 @@ namespace Lotto
             }
 
             label37.Text = "";
-            var matches26 = supertal.Intersect(super8);
+            var matches26 = supertal.Intersect(super8).ToList();
+            matches26.Remove(0);
             //Create comma-separated string of matching values...
             string output26 = string.Join(",", matches26);
             foreach (var x in output26)
@@ -589,7 +588,8 @@ namespace Lotto
 
             //Række 9
             label21.Text = "";
-            var matches9 = lotteryNums.Intersect(userNums9);
+            var matches9 = lotteryNums.Intersect(userNums9).ToList();
+            matches9.Remove(0);
             // Create comma-separated string of matching values...  
             string output9 = string.Join(",", matches9);
             foreach (var x in output9)
@@ -598,7 +598,8 @@ namespace Lotto
             }
 
             label40.Text = "";
-            var matches27 = tilleagstal.Intersect(tillaeg9);
+            var matches27 = tilleagstal.Intersect(tillaeg9).ToList();
+            matches27.Remove(0);
             //Create comma-separated string of matching values...
             string output27 = string.Join(",", matches27);
             foreach (var x in output27)
@@ -607,7 +608,8 @@ namespace Lotto
             }
 
             label39.Text = "";
-            var matches28 = supertal.Intersect(super9);
+            var matches28 = supertal.Intersect(super9).ToList();
+            matches28.Remove(0);
             //Create comma-separated string of matching values...
             string output28 = string.Join(",", matches28);
             foreach (var x in output28)
@@ -617,7 +619,8 @@ namespace Lotto
 
             //Række 10
             label22.Text = "";
-            var matches10 = lotteryNums.Intersect(userNums10);
+            var matches10 = lotteryNums.Intersect(userNums10).ToList();
+            matches10.Remove(0);
             // Create comma-separated string of matching values...  
             string output10 = string.Join(",", matches10);
             foreach (var x in output10)
@@ -626,7 +629,8 @@ namespace Lotto
             }
 
             label42.Text = "";
-            var matches29 = tilleagstal.Intersect(tillaeg10);
+            var matches29 = tilleagstal.Intersect(tillaeg10).ToList();
+            matches29.Remove(0);
             //Create comma-separated string of matching values...
             string output29 = string.Join(",", matches29);
             foreach (var x in output29)
@@ -635,7 +639,8 @@ namespace Lotto
             }
 
             label41.Text = "";
-            var matches30 = supertal.Intersect(super10);
+            var matches30 = supertal.Intersect(super10).ToList();
+            matches30.Remove(0);
             //Create comma-separated string of matching values...
             string output30 = string.Join(",", matches30);
             foreach (var x in output30)
@@ -680,16 +685,6 @@ namespace Lotto
             tillaeg10.Clear();
             super10.Clear();
             this.Close();
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -928,7 +928,6 @@
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 98;
             this.label19.Text = "label19";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -1746,7 +1745,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
